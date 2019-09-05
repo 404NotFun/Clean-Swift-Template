@@ -28,6 +28,9 @@ This is a CleanSwift template modified from the original, to accomodate common p
 1. Removed
     - `UICollectionViewController` and `UITableViewController` templates are removed since the templates use the `UIViewController` templates anyway.    
 
+1. Swift Lint
+    - enforce Swift style and conventions
+    
 ## Installation
 
 1. Clone this repository

@@ -96,11 +96,11 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         // based on error type
         if let error = viewModel.error {
             switch error.type {
-                case .emptyExampleVariable:
-                    exampleLabel.text = error.message
+            case .emptyExampleVariable:
+                exampleLabel.text = error.message
 
-                case .apiError:
-                    exampleLabel.text = error.message
+            case .apiError:
+                exampleLabel.text = error.message
             }
             return
         }

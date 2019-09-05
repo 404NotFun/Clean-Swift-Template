@@ -51,8 +51,7 @@ class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic,
             return
         }
 
-        worker?.perform___VARIABLE_sceneName___(completion: {
-            [weak self] (isSuccessful, error) in
+        worker?.perform___VARIABLE_sceneName___(completion: { [weak self] (isSuccessful, error) in
 
             if isSuccessful {
                 // do something on success

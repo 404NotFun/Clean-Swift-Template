@@ -8,46 +8,22 @@
 
 import UIKit
 
+import UIKit
+
 enum ___VARIABLE_sceneName___Models {
 
     // MARK: - Use Cases
 
     enum FetchFromDataStore {
-        struct Request {
-        }
-
-        struct Response {
-            var exampleVariable: String?
-        }
-
-        struct ViewModel {
-            var exampleVariable: String?
-        }
+        
     }
 
     enum TrackAnalytics {
-        struct Request {
-        }
-
-        struct Response {
-        }
-
-        struct ViewModel {
-        }
+        
     }
 
     enum Perform___VARIABLE_sceneName___ {
-        struct Request {
-            var exampleVariable: String?
-        }
-
-        struct Response {
-            var error: Error<___VARIABLE_sceneName___ErrorType>?
-        }
-
-        struct ViewModel {
-            var error: Error<___VARIABLE_sceneName___ErrorType>?
-        }
+        
     }
 
     // MARK: - View Models
@@ -63,5 +39,43 @@ enum ___VARIABLE_sceneName___Models {
         init(type: T) {
             self.type = type
         }
+    }
+}
+
+extension ___VARIABLE_sceneName___Models.FetchFromDataStore {
+    struct Request {
+    }
+
+    struct Response {
+        var exampleVariable: String?
+    }
+
+    struct ViewModel {
+        var exampleVariable: String?
+    }
+}
+
+extension ___VARIABLE_sceneName___Models.TrackAnalytics {
+    struct Request {
+    }
+
+    struct Response {
+    }
+
+    struct ViewModel {
+    }
+}
+
+extension ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___ {
+    struct Request {
+        var exampleVariable: String?
+    }
+
+    struct Response {
+        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___ErrorType>?
+    }
+
+    struct ViewModel {
+        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___ErrorType>?
     }
 }
