@@ -70,10 +70,10 @@ extension ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___ {
     }
 
     struct Response {
-        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___ErrorType>?
+        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___Models.___VARIABLE_sceneName___ErrorType>?
     }
 
     struct ViewModel {
-        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___ErrorType>?
+        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___Models.___VARIABLE_sceneName___ErrorType>?
     }
 }
