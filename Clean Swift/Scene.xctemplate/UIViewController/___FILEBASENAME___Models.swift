@@ -13,19 +13,9 @@ import UIKit
 enum ___VARIABLE_sceneName___Models {
 
     // MARK: - Use Cases
-
-    enum FetchFromDataStore {
-        
-    }
-
     enum TrackAnalytics {
         
     }
-
-    enum Perform___VARIABLE_sceneName___ {
-        
-    }
-
     // MARK: - View Models
 
     enum ___VARIABLE_sceneName___ErrorType {
@@ -42,19 +32,6 @@ enum ___VARIABLE_sceneName___Models {
     }
 }
 
-extension ___VARIABLE_sceneName___Models.FetchFromDataStore {
-    struct Request {
-    }
-
-    struct Response {
-        var exampleVariable: String?
-    }
-
-    struct ViewModel {
-        var exampleVariable: String?
-    }
-}
-
 extension ___VARIABLE_sceneName___Models.TrackAnalytics {
     struct Request {
     }
@@ -63,19 +40,5 @@ extension ___VARIABLE_sceneName___Models.TrackAnalytics {
     }
 
     struct ViewModel {
-    }
-}
-
-extension ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___ {
-    struct Request {
-        var exampleVariable: String?
-    }
-
-    struct Response {
-        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___Models.___VARIABLE_sceneName___ErrorType>?
-    }
-
-    struct ViewModel {
-        var error: ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___Models.___VARIABLE_sceneName___ErrorType>?
     }
 }
