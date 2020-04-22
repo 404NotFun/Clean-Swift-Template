@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol ___VARIABLE_sceneName___DisplayLogic: class {
-    func displayTrackAnalytics(with viewModel: ___VARIABLE_sceneName___Models.TrackAnalytics.ViewModel)
-}
-
 class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
 
     // MARK: - Properties

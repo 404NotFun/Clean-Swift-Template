@@ -8,24 +8,23 @@
 
 import UIKit
 
-protocol ___VARIABLE_sceneName___BusinessLogic {
-    func trackAnalytics(with request: ___VARIABLE_sceneName___Models.TrackAnalytics.Request)
-}
-
-protocol ___VARIABLE_sceneName___DataStore {
-    var exampleVariable: String? { get set }
-}
-
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
     var worker: ___VARIABLE_sceneName___Worker? = ___VARIABLE_sceneName___Worker()
+    var networker: ___VARIABLE_sceneName___NetworkerLogic?
     var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    var exampleVariable: String?
 
+    init() {
+        #if DEV
+        networker = ___VARIABLE_sceneName___MockNetworker()
+        #else
+        networker = ___VARIABLE_sceneName___Networker()
+        #endif
+    }
     // MARK: Use Case - Track Analytics
 
     func trackAnalytics(with request: ___VARIABLE_sceneName___Models.TrackAnalytics.Request) {
         // call analytics library/wrapper here to track analytics
-
+        
         let response = ___VARIABLE_sceneName___Models.TrackAnalytics.Response()
         presenter?.presentTrackAnalytics(with: response)
     }

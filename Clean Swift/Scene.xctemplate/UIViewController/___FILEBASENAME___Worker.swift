@@ -9,27 +9,15 @@
 import UIKit
 
 class ___VARIABLE_sceneName___Worker {
-
     // MARK: - Properties
 
-    typealias ErrorType = ___VARIABLE_sceneName___Models.___VARIABLE_sceneName___ErrorType
-    var error: ___VARIABLE_sceneName___Models.Error<ErrorType>?
-
     // MARK: - Use Cases
+}
 
-    func validate(exampleVariable: String?) {
-        if exampleVariable?.isEmpty == false {
-            error = nil
-        }
-        else {
-            error = ___VARIABLE_sceneName___Models.Error<ErrorType>.init(type: .emptyExampleVariable)
-        }
-    }
+class ___VARIABLE_sceneName___Networker: ___VARIABLE_sceneName___NetworkerLogic {
 
-    func perform___VARIABLE_sceneName___(completion: @escaping (Bool, ___VARIABLE_sceneName___Models.Error<ErrorType>?) -> Void) {
-        let isSuccessful = true
-        let error: ___VARIABLE_sceneName___Models.Error<ErrorType>? = nil
+}
 
-        completion(isSuccessful, error)
-    }
+class ___VARIABLE_sceneName___MockNetworker: ___VARIABLE_sceneName___NetworkerLogic {
+
 }

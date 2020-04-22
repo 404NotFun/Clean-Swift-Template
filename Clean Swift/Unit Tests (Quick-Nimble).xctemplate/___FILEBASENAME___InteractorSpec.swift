@@ -17,6 +17,7 @@ class ___VARIABLE_sceneName___InteractorSpec: QuickSpec {
         // MARK: - Test Doubles
         var presentationLogicSpy: ___VARIABLE_sceneName___PresentationLogicSpy!
         var workerSpy: ___VARIABLE_sceneName___WorkerSpy!
+        var networkerSpy: ___VARIABLE_sceneName___NetworkerSpy!
         // MARK: - Tests
         beforeEach {
             setupInitialUserState()
@@ -28,16 +29,6 @@ class ___VARIABLE_sceneName___InteractorSpec: QuickSpec {
             sut = nil
         }
         // MARK: Use Cases
-        describe("fetch from data store") {
-            it("should ask presenter to format", closure: {
-                // given
-                let request = ___VARIABLE_sceneName___Models.FetchFromDataStore.Request()
-                // when
-                sut.fetchFromDataStore(with: request)
-                // then
-                expect(presentationLogicSpy.presentFetchFromDataStoreCalled).to(beTrue())
-            })
-        }
         describe("track analytics") {
             it("should ask presenter to format", closure: {
                 // given
@@ -47,44 +38,6 @@ class ___VARIABLE_sceneName___InteractorSpec: QuickSpec {
                 // then
                 expect(presentationLogicSpy.presentTrackAnalyticsCalled).to(beTrue())
             })
-        }
-        describe("perform ___VARIABLE_sceneName___") {
-            it("should validate example variable", closure: {
-                // given
-                let request = ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___.Request()
-                // when
-                sut.perform___VARIABLE_sceneName___(with: request)
-                // then
-                expect(workerSpy.validateExampleVariableCalled).to(beTrue())
-            })
-            context("when there are error(s)", closure: {
-                it("should not ask worker to perform ___VARIABLE_sceneName___", closure: {
-                    // given
-                    let request = ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___.Request(exampleVariable: nil)
-                    // when
-                    sut.perform___VARIABLE_sceneName___(with: request)
-                    // then
-                    expect(workerSpy.perform___VARIABLE_sceneName___Called).to(beFalse())
-                })
-            })
-            context("when there are no errors", closure: {
-                it("should ask worker to perform ___VARIABLE_sceneName___", closure: {
-                    // given
-                    let request = ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___.Request(exampleVariable: "Example string.")
-                    // when
-                    sut.perform___VARIABLE_sceneName___(with: request)
-                    // then
-                    expect(workerSpy.perform___VARIABLE_sceneName___Called).to(beTrue())                    
-                })
-            })
-            it("should ask presenter to format", closure: {
-                // given
-                let request = ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___.Request()
-                // when
-                sut.perform___VARIABLE_sceneName___(with: request)
-                // then
-                expect(presentationLogicSpy.presentPerform___VARIABLE_sceneName___Called).to(beTrue())                
-            })            
         }
         // MARK: - Test Helpers
         func setupInitialUserState() {
@@ -99,7 +52,9 @@ class ___VARIABLE_sceneName___InteractorSpec: QuickSpec {
         }
         func setupWorker() {
             workerSpy = ___VARIABLE_sceneName___WorkerSpy()
+            networkerSpy = ___VARIABLE_sceneName___NetworkerSpy()
             sut.worker = workerSpy
+            sut.networker = networkerSpy
         }
     }
 }
@@ -107,37 +62,17 @@ class ___VARIABLE_sceneName___InteractorSpec: QuickSpec {
 // MARK: - Test Doubles
 extension ___VARIABLE_sceneName___InteractorSpec {
     class ___VARIABLE_sceneName___PresentationLogicSpy: ___VARIABLE_sceneName___PresentationLogic {
-        // MARK: Spied Methods
-        var presentFetchFromDataStoreCalled = false
-        var fetchFromDataStoreResponse: ___VARIABLE_sceneName___Models.FetchFromDataStore.Response!
-        func presentFetchFromDataStore(with response: ___VARIABLE_sceneName___Models.FetchFromDataStore.Response) {
-            presentFetchFromDataStoreCalled = true
-            fetchFromDataStoreResponse = response
-        }
         var presentTrackAnalyticsCalled = false
         var trackAnalyticsResponse: ___VARIABLE_sceneName___Models.TrackAnalytics.Response!
         func presentTrackAnalytics(with response: ___VARIABLE_sceneName___Models.TrackAnalytics.Response) {
             presentTrackAnalyticsCalled = true
             trackAnalyticsResponse = response
         }
-        var presentPerform___VARIABLE_sceneName___Called = false
-        var perform___VARIABLE_sceneName___Response: ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___.Response!
-        func presentPerform___VARIABLE_sceneName___(with response: ___VARIABLE_sceneName___Models.Perform___VARIABLE_sceneName___.Response) {
-            presentPerform___VARIABLE_sceneName___Called = true
-            perform___VARIABLE_sceneName___Response = response
-        }
     }
     class ___VARIABLE_sceneName___WorkerSpy: ___VARIABLE_sceneName___Worker {
-        // MARK: Spied Methods
-        var validateExampleVariableCalled = false
-        override func validate(exampleVariable: String?) {
-            super.validate(exampleVariable: exampleVariable)
-            validateExampleVariableCalled = true
-        }
-        var perform___VARIABLE_sceneName___Called = false
-        override func perform___VARIABLE_sceneName___(completion: @escaping (Bool, ___VARIABLE_sceneName___Models.Error<___VARIABLE_sceneName___Worker.ErrorType>?) -> Void) {
-            super.perform___VARIABLE_sceneName___(completion: completion)
-            perform___VARIABLE_sceneName___Called = true
-        }
+        
+    }
+    class ___VARIABLE_sceneName___NetworkerSpy: ___VARIABLE_sceneName___MockNetworker {
+        
     }
 }

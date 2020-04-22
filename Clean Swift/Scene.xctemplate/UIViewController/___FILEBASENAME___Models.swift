@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 enum ___VARIABLE_sceneName___Models {
 
     // MARK: - Use Cases
@@ -17,19 +15,7 @@ enum ___VARIABLE_sceneName___Models {
         
     }
     // MARK: - View Models
-
-    enum ___VARIABLE_sceneName___ErrorType {
-        case emptyExampleVariable, apiError
-    }
-
-    struct Error<T> {
-        var type: T
-        var message: String?
-
-        init(type: T) {
-            self.type = type
-        }
-    }
+    
 }
 
 extension ___VARIABLE_sceneName___Models.TrackAnalytics {
